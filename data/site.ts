@@ -94,7 +94,7 @@ export const bookmarks: LinkItem[] = [
     category: "个人站点",
   },
   {
-    title: "房梓豪的学习空间",
+    title: "小房的空间",
     url: "https://fongtszho.github.io/fongtszho.web/",
     description: "个人学习记录",
     category: "个人站点",
