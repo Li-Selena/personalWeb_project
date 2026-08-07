@@ -140,6 +140,18 @@ export const tools: LinkItem[] = [
     description: "在线英文文本朗读",
     category: "语言工具",
   },
+  {
+    title: "魔戒控制台",
+    url: "https://47.242.128.61:8000/dashboard",
+    description: "代理服务仪表盘与管理入口",
+    category: "代理服务",
+  },
+  {
+    title: "MITCE",
+    url: "https://mitce.io/",
+    description: "代理服务网站入口",
+    category: "代理服务",
+  },
 ];
 
 export const contacts = [
