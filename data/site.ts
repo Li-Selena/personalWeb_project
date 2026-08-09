@@ -106,6 +106,82 @@ export const bookmarks: LinkItem[] = [
     category: "校园服务",
     accessNote: "可能需要校园账号登录",
   },
+  {
+    title: "机械臂混控分享",
+    url: "https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&__biz=MzE5MTI2MzUzNw==&scene=1&album_id=4528530393700204550&count=3#wechat_redirect",
+    description: "机械臂混合控制相关内容合集",
+    category: "机器人技术",
+    accessNote: "微信公众平台文章合集",
+  },
+  {
+    title: "Leader 老师的 GitHub",
+    url: "https://github.com/Leader-txt",
+    description: "Leader 老师的开源项目与代码仓库",
+    category: "个人主页",
+  },
+  {
+    title: "Hello World 战队步兵导航分享",
+    url: "https://github.com/Polyacetone/HWSentryNav26",
+    description: "浙江大学 Hello World 战队的步兵导航开源项目",
+    category: "导航开源",
+  },
+  {
+    title: "LocoWiki 足式机器人开源仓库",
+    url: "https://github.com/LocoWiki/LocoWiki",
+    description: "足式机器人开源代码与项目资料",
+    category: "足式机器人",
+  },
+  {
+    title: "LocoWiki 足式机器人飞书资料",
+    url: "https://wcn9j5638vrr.feishu.cn/wiki/BnbBwsINci9ijokLyyfcN9tInpe?from=from_copylink",
+    description: "足式机器人相关飞书知识库",
+    category: "足式机器人",
+    accessNote: "可能需要登录或相应访问权限",
+  },
+  {
+    title: "MATRiX 仿真平台",
+    url: "https://github.com/zsibot/matrix",
+    description: "结合 UE5 与 MuJoCo 的机器人仿真平台",
+    category: "仿真平台",
+  },
+  {
+    title: "达妙产品资料 GitHub",
+    url: "https://github.com/dmBots/dmBot",
+    description: "达妙机器人产品资料与开源代码总入口",
+    category: "产品资料",
+  },
+  {
+    title: "达妙产品资料飞书",
+    url: "https://gl1po2nscb.feishu.cn/drive/folder/RJL7fFT4ll9PDSdvM6Pc5vntnPw",
+    description: "达妙机器人产品资料飞书文件夹",
+    category: "产品资料",
+    accessNote: "可能需要登录或相应访问权限",
+  },
+  {
+    title: "Robocon 上位机技术分享",
+    url: "https://lumivers.feishu.cn/wiki/I0S2wsP9DiUsGdkp1kkc9s48ngb",
+    description: "Robocon 上位机开发相关技术资料",
+    category: "技术分享",
+    accessNote: "可能需要登录或相应访问权限",
+  },
+  {
+    title: "中北大学 ROBOCON 2026 主控板第二版",
+    url: "https://oshwhub.com/ericyuhaotong/project_czxokunj",
+    description: "中北大学 ROBOCON 2026 硬件开源企划主控板",
+    category: "硬件开源",
+  },
+  {
+    title: "中北大学 ROBOCON 2026 IO-Link 主站拓展板",
+    url: "https://oshwhub.com/ericyuhaotong/project_leseyekn",
+    description: "IO-Link 主站拓展板硬件与配套固件",
+    category: "硬件开源",
+  },
+  {
+    title: "RMUC OfflineRL",
+    url: "https://github.com/Harkerbest/RMUC-OfflineRL",
+    description: "用于训练机器人自主决策的离线强化学习框架",
+    category: "强化学习",
+  },
 ];
 
 export const tools: LinkItem[] = [
@@ -151,6 +227,12 @@ export const tools: LinkItem[] = [
     url: "https://mitce.io/",
     description: "代理服务网站入口",
     category: "代理服务",
+  },
+  {
+    title: "Wallhaven 壁纸",
+    url: "https://wallhaven.cc/",
+    description: "高清壁纸搜索与下载",
+    category: "壁纸工具",
   },
 ];
 
