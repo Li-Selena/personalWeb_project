@@ -98,7 +98,7 @@ export default function HomePage() {
             <span id="tools-title">常用工具</span>
           </SectionTitle>
           <div className="tool-strip">
-            {tools.slice(0, 4).map((tool, index) => {
+            {tools.slice(0, 8).map((tool, index) => {
               const Icon = toolIcons[index] ?? Box;
               return (
                 <a
