@@ -16,7 +16,7 @@ export const siteConfig = {
   title: "Li Selena｜个人学习记录与工具站",
   description:
     "机器人工程师 Li Selena 的个人学习记录与日常工具站，整理嵌入式、ROS 2、仿真、环境搭建和控制算法相关内容。",
-  url: "https://liselena.cn",
+  url: "https://www.liselena.cn",
   nav: [
     { href: "/", label: "首页" },
     { href: "/about/", label: "关于我" },

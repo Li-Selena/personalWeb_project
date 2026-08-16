@@ -195,7 +195,7 @@ dns:
 # FlClash / Mihomo 可复用配置模板
 # ========================
 # 可公开分享的模板；填写私人订阅地址后请勿再次公开上传。
-# 使用说明：https://liselena.cn/wiki/flclash-mtice-tun-codex/
+# 使用说明：https://www.liselena.cn/wiki/flclash-mtice-tun-codex/
 # 配置框架参考：https://github.com/tungchiahui/ClashYaml
 
 # 机场节点订阅

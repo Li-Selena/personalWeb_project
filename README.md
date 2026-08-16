@@ -44,4 +44,4 @@ git push origin main
 - 环境变量：无需填写
 - Node.js：22
 
-生产域名为 `liselena.cn`。在 EdgeOne Pages 中同时绑定 `liselena.cn` 与 `www.liselena.cn`，并将 `www` 重定向到根域名；代码推送到 `main` 后会自动触发部署。
+生产域名为 `www.liselena.cn`。在 EdgeOne Makers 中同时绑定 `liselena.cn` 与 `www.liselena.cn`，并将根域名永久重定向到 `www`；代码推送到 `main` 后会自动触发部署。
