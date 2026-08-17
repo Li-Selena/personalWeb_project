@@ -17,6 +17,10 @@ export const siteConfig = {
   description:
     "机器人工程师 Li Selena 的个人学习记录与日常工具站，整理嵌入式、ROS 2、仿真、环境搭建和控制算法相关内容。",
   url: "https://www.liselena.cn",
+  icp: {
+    number: "鲁ICP备2026046668号-1",
+    url: "https://beian.miit.gov.cn/",
+  },
   nav: [
     { href: "/", label: "首页" },
     { href: "/about/", label: "关于我" },

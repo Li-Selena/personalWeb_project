@@ -211,6 +211,16 @@ select:focus-visible {
   margin: 0;
 }
 
+.site-footer__identity {
+  display: grid;
+  gap: 8px;
+}
+
+.site-footer__icp {
+  width: fit-content;
+  font-size: 13px;
+}
+
 .site-footer__inner strong {
   color: var(--ink);
 }
