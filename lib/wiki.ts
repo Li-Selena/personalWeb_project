@@ -110,6 +110,28 @@ function rehypeLinkImages() {
   };
 }
 
+function rehypeExternalLinks() {
+  return (tree: HtmlNode) => {
+    function walk(node: HtmlNode) {
+      if (node.type === "element" && node.tagName === "a") {
+        const href = node.properties?.href;
+
+        if (typeof href === "string" && /^https?:\/\//i.test(href)) {
+          node.properties = {
+            ...node.properties,
+            target: "_blank",
+            rel: ["noopener", "noreferrer"],
+          };
+        }
+      }
+
+      node.children?.forEach(walk);
+    }
+
+    walk(tree);
+  };
+}
+
 function walkMarkdownFiles(directory: string): string[] {
   if (!fs.existsSync(directory)) {
     return [];
@@ -221,6 +243,7 @@ export async function getWikiEntry(slug: string): Promise<WikiEntry | null> {
       .use(rehypeSlug)
       .use(rehypeSanitize)
       .use(rehypeLinkImages)
+      .use(rehypeExternalLinks)
       .use(rehypeHighlight, { detect: true })
       .use(rehypeStringify)
       .process(parsed.content);

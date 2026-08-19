@@ -3,10 +3,11 @@ import Link from "next/link";
 import { ArrowRight, Box, Cloud, Languages, Mail, Wrench } from "lucide-react";
 import { CircuitFrame } from "@/components/circuit-frame";
 import { FocusList } from "@/components/focus-list";
+import { HomeBookmarks } from "@/components/home/home-bookmarks";
 import { HomeEmptyUpdates } from "@/components/home/home-empty-updates";
 import { ImageLightbox } from "@/components/image-lightbox";
 import { SectionTitle } from "@/components/section-title";
-import { tools } from "@/data/site";
+import { bookmarks, tools } from "@/data/site";
 import { getWikiEntries } from "@/lib/wiki";
 
 export const metadata: Metadata = {
@@ -86,38 +87,54 @@ export default function HomePage() {
           )}
         </div>
 
-        <div className="home-dashboard__tools" aria-labelledby="tools-title">
-          <SectionTitle
-            action={
-              <Link className="text-link" href="/wiki/">
-                查看全部
-                <ArrowRight aria-hidden="true" />
-              </Link>
-            }
-          >
-            <span id="tools-title">常用工具</span>
-          </SectionTitle>
-          <div className="tool-strip">
-            {tools.slice(0, 8).map((tool, index) => {
-              const Icon = toolIcons[index] ?? Box;
-              return (
-                <a
-                  className="tool-strip__item"
-                  href={tool.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={tool.title}
-                >
-                  <span className="tool-strip__icon" aria-hidden="true">
-                    <Icon />
-                  </span>
-                  <strong>{tool.title}</strong>
-                  <small>{tool.description}</small>
-                  <ArrowRight className="tool-strip__arrow" aria-hidden="true" />
-                </a>
-              );
-            })}
-          </div>
+        <div className="home-dashboard__resources">
+          <section className="home-dashboard__bookmarks" aria-labelledby="bookmarks-title">
+            <SectionTitle
+              action={
+                <Link className="text-link" href="/wiki/">
+                  查看全部
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              }
+            >
+              <span id="bookmarks-title">网页收藏</span>
+            </SectionTitle>
+            <HomeBookmarks bookmarks={bookmarks} />
+          </section>
+
+          <section className="home-dashboard__tools" aria-labelledby="tools-title">
+            <SectionTitle
+              action={
+                <Link className="text-link" href="/wiki/">
+                  查看全部
+                  <ArrowRight aria-hidden="true" />
+                </Link>
+              }
+            >
+              <span id="tools-title">常用工具</span>
+            </SectionTitle>
+            <div className="tool-strip">
+              {tools.slice(0, 8).map((tool, index) => {
+                const Icon = toolIcons[index] ?? Box;
+                return (
+                  <a
+                    className="tool-strip__item"
+                    href={tool.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={tool.title}
+                  >
+                    <span className="tool-strip__icon" aria-hidden="true">
+                      <Icon />
+                    </span>
+                    <strong>{tool.title}</strong>
+                    <small>{tool.description}</small>
+                    <ArrowRight className="tool-strip__arrow" aria-hidden="true" />
+                  </a>
+                );
+              })}
+            </div>
+          </section>
         </div>
       </section>
     </main>

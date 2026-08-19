@@ -155,7 +155,13 @@ export function WikiBrowser({ entries, categories, bookmarks, tools }: WikiBrows
             filteredEntries.length > 0 ? (
               <div className="wiki-entry-list">
                 {filteredEntries.map((entry) => (
-                  <Link className="wiki-entry-row" href={`/wiki/${entry.slug}/`} key={entry.slug}>
+                  <Link
+                    className="wiki-entry-row"
+                    href={`/wiki/${entry.slug}/`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={entry.slug}
+                  >
                     <span className="wiki-entry-row__icon" aria-hidden="true">
                       <BookOpenText />
                     </span>
