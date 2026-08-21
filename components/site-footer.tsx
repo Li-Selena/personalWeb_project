@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/data/site";
 
@@ -11,14 +12,31 @@ export function SiteFooter() {
             <span aria-hidden="true"> · </span>
             Robotics Engineer
           </p>
-          <a
-            className="site-footer__icp"
-            href={siteConfig.icp.url}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            {siteConfig.icp.number}
-          </a>
+          <div className="site-footer__filings">
+            <a
+              className="site-footer__icp"
+              href={siteConfig.icp.url}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {siteConfig.icp.number}
+            </a>
+            <a
+              className="site-footer__public-security"
+              href={siteConfig.publicSecurity.url}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                alt=""
+                aria-hidden="true"
+                height={20}
+                src={siteConfig.publicSecurity.icon}
+                width={18}
+              />
+              <span>{siteConfig.publicSecurity.number}</span>
+            </a>
+          </div>
         </div>
         <nav aria-label="页脚导航">
           {siteConfig.nav.map((item) => (

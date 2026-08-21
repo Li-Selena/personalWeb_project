@@ -216,9 +216,26 @@ select:focus-visible {
   gap: 8px;
 }
 
-.site-footer__icp {
-  width: fit-content;
+.site-footer__filings {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.site-footer__icp,
+.site-footer__public-security {
   font-size: 13px;
+}
+
+.site-footer__public-security {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.site-footer__public-security img {
+  flex: none;
 }
 
 .site-footer__inner strong {
