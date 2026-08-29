@@ -51,8 +51,12 @@ type HtmlNode = {
   type: string;
   tagName?: string;
   properties?: Record<string, unknown>;
+  value?: string;
   children?: HtmlNode[];
 };
+
+const LOCAL_VIDEO_PATTERN = /^\/[^?#]+\.(?:mp4|webm|ogg)(?:[?#].*)?$/i;
+const LOCAL_IMAGE_PATTERN = /^\/[^?#]+\.(?:avif|gif|jpe?g|png|webp)(?:[?#].*)?$/i;
 
 function markdownText(node: MarkdownNode): string {
   if (typeof node.value === "string") {
@@ -99,6 +103,87 @@ function rehypeLinkImages() {
               children: [child],
             };
           }
+        }
+
+        walk(child);
+        return child;
+      });
+    }
+
+    walk(tree);
+  };
+}
+
+function rehypeLinkVideos() {
+  return (tree: HtmlNode) => {
+    function videoFigure(link: HtmlNode): HtmlNode | null {
+      if (link.type !== "element" || link.tagName !== "a") {
+        return null;
+      }
+
+      const href = link.properties?.href;
+      const title = link.properties?.title;
+      if (typeof href !== "string" || !LOCAL_VIDEO_PATTERN.test(href)) {
+        return null;
+      }
+
+      const poster =
+        typeof title === "string" && LOCAL_IMAGE_PATTERN.test(title) ? title : undefined;
+      const caption =
+        link.children && link.children.length > 0
+          ? link.children
+          : [{ type: "text", value: "仿真演示视频" }];
+
+      return {
+        type: "element",
+        tagName: "figure",
+        properties: { className: ["markdown-video-figure"] },
+        children: [
+          {
+            type: "element",
+            tagName: "video",
+            properties: {
+              controls: true,
+              playsInline: true,
+              preload: "metadata",
+              src: href,
+              ...(poster ? { poster } : {}),
+            },
+            children: [
+              {
+                type: "element",
+                tagName: "a",
+                properties: { href },
+                children: [{ type: "text", value: "下载或打开视频" }],
+              },
+            ],
+          },
+          {
+            type: "element",
+            tagName: "figcaption",
+            properties: {},
+            children: caption,
+          },
+        ],
+      };
+    }
+
+    function walk(node: HtmlNode) {
+      if (!node.children) {
+        return;
+      }
+
+      node.children = node.children.map((child) => {
+        if (child.type === "element" && child.tagName === "p" && child.children?.length === 1) {
+          const figure = videoFigure(child.children[0]);
+          if (figure) {
+            return figure;
+          }
+        }
+
+        const figure = videoFigure(child);
+        if (figure) {
+          return figure;
         }
 
         walk(child);
@@ -243,6 +328,7 @@ export async function getWikiEntry(slug: string): Promise<WikiEntry | null> {
       .use(rehypeSlug)
       .use(rehypeSanitize)
       .use(rehypeLinkImages)
+      .use(rehypeLinkVideos)
       .use(rehypeExternalLinks)
       .use(rehypeHighlight, { detect: true })
       .use(rehypeStringify)
