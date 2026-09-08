@@ -84,6 +84,13 @@ export const bookmarks: LinkItem[] = [
     accessNote: "可能需要登录或相应访问权限",
   },
   {
+    title: "山理工VINCI机器人战队官网",
+    url: "http://www-sdutvinci-cn.newvpn.sdut.edu.cn:8118/",
+    description: "山理工 VINCI 机器人战队官方网站",
+    category: "机器人战队",
+    accessNote: "可能依赖山理工新 VPN 或登录状态",
+  },
+  {
     title: "山理工教学服务平台",
     url: "http://authserver-sdut-edu-cn-s.newvpn.sdut.edu.cn:8118/authserver/login?service=https%3A%2F%2Fnewvpn.sdut.edu.cn%3A443%2Fpassport%2Fv1%2Fauth%2Fcas%3FsfDomain%3Dcas.com",
     description: "教学服务入口",
