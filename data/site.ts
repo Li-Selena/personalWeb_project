@@ -85,10 +85,9 @@ export const bookmarks: LinkItem[] = [
   },
   {
     title: "山理工VINCI机器人战队官网",
-    url: "http://www-sdutvinci-cn.newvpn.sdut.edu.cn:8118/",
+    url: "https://vinci.sdut.edu.cn/",
     description: "山理工 VINCI 机器人战队官方网站",
     category: "机器人战队",
-    accessNote: "可能依赖山理工新 VPN 或登录状态",
   },
   {
     title: "山理工教学服务平台",
