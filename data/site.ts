@@ -77,6 +77,12 @@ export const wikiCategories = [
 
 export const bookmarks: LinkItem[] = [
   {
+    title: "RM开源网站",
+    url: "https://search.scutbot.cn/",
+    description: "RM 开源资源检索入口",
+    category: "机器人技术",
+  },
+  {
     title: "飞书",
     url: "https://sdutvincirobot.feishu.cn/drive/home/?src_domain_uid=7483508928941309956",
     description: "团队文档与资料入口",
@@ -112,6 +118,12 @@ export const bookmarks: LinkItem[] = [
     title: "小房的空间",
     url: "https://fongtszho.github.io/fongtszho.web/",
     description: "个人学习记录",
+    category: "个人站点",
+  },
+  {
+    title: "Lain佬的小站",
+    url: "https://lain-ego0.github.io/",
+    description: "Lain 的个人小站",
     category: "个人站点",
   },
   {
